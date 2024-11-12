@@ -1,0 +1,45 @@
+<script>
+  class Bank {
+    constructor(name, account, branch, IFSC, balance, transactions) {
+      this.name = name;
+      this.account = account;
+      this.branch = branch;
+      this.IFSC = IFSC;
+      this.balance = balance; // Changed to 'balance' for consistency
+      this.transactions = transactions;
+    }
+
+    info() {
+      console.log(`
+        name: ${this.name},
+        account: ${this.account},
+        branch: ${this.branch},
+        IFSC: ${this.IFSC},
+        Balance: ${this.balance}
+      `);
+    }
+
+    trans() {
+      console.log(`${this.transactions}`);
+    }
+  }
+
+  let ram_transaction = [100, 200, 300, 54]; // Changed 'transection' to 'transaction'
+
+  let ram = new Bank("ram", "SBI", "123456", "SBIN1564", 1000, ram_transaction); // Removed quotes around '1000'
+
+
+  
+  let sham_transaction = [1000, 800, 150, 540]; // Changed 'transection' to 'transaction'
+
+  let sham = new Bank("sham", "SBI", "654321", "SBIN654789", 200, sham_transaction); 
+
+
+  
+  ram.info();
+  ram.trans();
+
+  
+  sham.info();  
+  sham.trans();
+</script>
