@@ -1,0 +1,43 @@
+<script>
+    class Bank{
+        constructor(name,accountNo,balance,Branch,IFSC){
+            this.name = name,
+            this.accountNo = accountNo,
+            this.balance = balance,
+            this.Branch = Branch,
+            this.IFSC = IFSC
+        }
+
+        info(){
+            console.log(`
+            name: ${this.name},
+            accountNo: ${this.accountNo},
+            balance: ${this.balance},
+            Branch: ${this.Branch},
+            IFSC: ${this.IFSC} 
+            `)
+        }
+
+    }
+
+    class AccountHolder extends Bank{
+        constructor(name,accountNo,balance,Branch,IFSC,creditcardHolder,loan){
+            super(name,accountNo,balance,Branch,IFSC)//inherit
+
+            this.creditcardHolder = creditcardHolder,
+            this.loan = loan;
+        }
+
+        info(){
+            super.info();
+
+            console.log(`
+            creaditcardholder: ${this.creditcardHolder},
+            loan: ${this.loan}
+            `)
+        }
+    }
+
+    let adil = new AccountHolder("adil",123456,1000,"Amreli","SBIN123",true,25000)
+    adil.info()
+</script>
