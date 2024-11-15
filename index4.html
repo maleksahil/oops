@@ -1,0 +1,32 @@
+<script>
+
+    class Car{
+        constructor(name){
+            this.name = name;
+        }
+
+        order(){
+            console.log('order cancelled automatically')
+        }
+    }
+
+    class Bugati extends Car{
+        constructor(name,speed){
+            super(name)
+            this.speed = speed
+        }
+
+        order(){
+             console.log("order placed")
+        }
+    }
+
+    const cars = new Bugati('bugati','350km/hr');
+    console.log(cars)
+
+    try{
+        console.log(cars.order())
+    }catch(e){
+        console.log(e)
+    }
+</script>
