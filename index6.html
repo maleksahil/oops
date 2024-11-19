@@ -1,0 +1,49 @@
+<script>
+    class students{
+
+    }
+
+    class raja extends students{
+        constructor(name,marks,Rollno){
+            super(name,marks,Rollno)
+            this.name = name,
+            this.marks = marks,
+            this.Rollno = Rollno
+        }
+
+        percentage(){
+           let  per = this.marks/5;
+            return per;
+        }
+
+        get Rollno(){
+            return this._Rollno
+        }
+
+        set Rollno(no){
+            return this._Rollno = no
+        }
+
+        result(){
+            console.log(`
+            name: ${this.name},
+            marks: ${this.marks},
+            percentage: ${this.marks/5}
+            `)
+
+        }
+
+    }
+
+    let r1 = new raja('raja',430,1)
+    
+    console.log(r1.percentage())
+
+    console.log(`initital rollno: ${r1.Rollno}`)
+
+    r1.Rollno = 2; //Updating the ROllno
+
+    console.log(`Updated ROllno: ${r1.Rollno}`)
+
+    r1.result()
+</script>
